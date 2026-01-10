@@ -1,0 +1,128 @@
+@import "~/.config/rofi/colors.rasi"
+
+/* ===== Matugen color aliasing ===== */
+* {
+    /* backgrounds (glass / layers) */
+    bg0:  @inverse-surface;              
+    bg1:  @inverse-on-surface;           
+    bg2:  @surface-container-high;       
+    bg3:  @outline-variant;              
+
+    /* text */
+    fg0:  @on-surface;                   
+    fg1:  @on-surface-variant;           
+    fg2:  @outline;                      
+
+    /* accents (PASTEL, NOT NEON) */
+    red:      @primary;                 
+    green:    @secondary;                
+    yellow:   @secondary-fixed-dim;      
+    blue:     @inverse-primary;          
+    magenta:  @tertiary;                 
+    cyan:     @secondary-fixed;          
+}
+
+* {
+  font:   "JetBrainsMono Nerd Font Propo 10";
+
+  accent: @blue;
+  urgent: @yellow;
+
+  background-color : transparent;
+  text-color       : @fg0;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location : southwest;
+  width    : 280px;
+  x-offset : 4px;
+  y-offset : -5px;
+  opacity: 0.15;
+
+  background-color: @bg1;
+  border: 1px;
+  border-color: @bg3;
+  border-radius: 10px;
+}
+
+inputbar {
+  spacing  : 8px;
+  padding  : 4px 8px;
+  children : [ icon-search, entry ];
+
+  background-color: @bg2;
+}
+
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 14px;
+}
+
+textbox {
+  padding          : 4px 8px;
+  background-color : @bg2;
+}
+
+listview {
+  padding      : 4px 0px;
+  lines        : 10;
+  columns      : 1;
+  scrollbar    : true;
+  fixed-height : false;
+  dynamic      : true;
+}
+
+element {
+  padding : 4px 8px;
+  spacing : 8px;
+  border-radius : 14px; 
+}
+
+element normal urgent {
+  text-color: @urgent;
+}
+
+element normal active {
+  text-color: @accent;
+}
+
+element alternate active {
+  text-color: @accent;
+}
+
+element selected {
+  border-radius    : 4px; 
+  text-color       : @bg1;
+  background-color : @accent;
+}
+
+element selected urgent {
+  background-color: @urgent;
+}
+
+element-icon {
+  size: 0.8em;
+}
+
+element-text {
+  text-color: inherit;
+}
+
+scrollbar {
+  handle-width : 2px;
+  handle-color : @fg2;
+  padding      : 0 2px;
+}
