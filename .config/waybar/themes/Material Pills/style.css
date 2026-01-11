@@ -1,0 +1,136 @@
+@import 'colors.css';
+
+* {
+    border: none;
+    border-radius: 0px;
+
+    font-family: "Adwaita Sans", "JetBrainsMono Nerd Font Propo";
+    font-weight: bold;
+
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @bg0;
+    border: 1px solid @bg3;
+    border-radius: 12px;
+}
+
+tooltip label{
+    color: @fg;
+    padding: 6px;
+}
+
+#workspaces {
+    background-color: @bg0;
+    padding:5px 6px;
+    margin: 0 0 0 12px;
+    border-radius: 18px;
+    border: 1px solid @bg1;
+    color: @fg;
+}
+
+#workspaces button { 
+    padding: 0px 4px;
+    margin: 0px 3px;
+    border-radius: 16px;
+    color: transparent;
+    background-color: @bg1;
+    transition: all 150ms ease-in-out;
+}
+
+#workspaces button.active { 
+    background-color: @fg;
+    color: @bg0;
+    min-width: 30px;
+    transition: all 150ms ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: @on_primary;
+    color: @bg0;
+    border-radius: 16px;
+    min-width: 30px;
+    background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @bg0;
+    border-radius: 16px;
+    background-size: 400% 400%;
+    transition: all 150ms ease-in-out;
+}
+
+#clock,
+#custom-apps,
+#mpris,
+#tray,
+#pulseaudio,
+#custom-notification,    
+#network {
+    background-color: @bg0;
+    padding: 0 10px 0 10px;
+    margin: 0 0 0 10px;
+    border-radius: 50px;
+    border: 1px solid @bg1;
+    color: @fg;
+}
+
+#custom-screenrecording-indicator.active {
+    color: @red;
+    background-color: @bg0;
+    padding: 0 10px 0 10px;
+    margin: 0 0 0 10px;
+    border-radius: 50px;
+    border: 1px solid @bg1;
+}
+
+#custom-screenrecording-indicator {
+    background-color: @bg0;
+    padding: 0 10px 0 10px;
+    margin: 0 0 0 10px;
+    border-radius: 50px;
+    border: 1px solid @bg1;
+}
+
+#custom-apps {
+    color: @fg;
+} 
+
+#clock {
+    color: @fg;
+}
+
+#mpris {
+    color: @fg;
+}
+
+#pulseaudio {
+    color: @fg;
+}
+
+#network {
+    color: @fg;
+    margin-right: 11px;
+}
+
+#custom-notification {
+    color: @fg ;
+}
+
+/* ===== Compatibility aliases for custom style.css ===== */
+
+@define-color bg0 @background;
+@define-color bg1 @surface_container;
+@define-color bg3 @surface_variant;
+@define-color bg4 @surface_container_high;
+
+@define-color fg @primary ;
+@define-color red @error;

@@ -7,6 +7,7 @@ MENU=$(cat << 'EOF'
  Icon Picker
 󰴱 Color Picker
 󰆠 Wallpaper Selector
+ Waybar Selector
  Screenshot
  Lock
 󰐥 Shutdown
@@ -33,6 +34,9 @@ case "$choice" in
         ;;
     "󰆠 Wallpaper Selector")
         bash ~/.config/rofi/scripts/wallpaper.sh
+        ;;
+    " Waybar Selector")
+        bash ~/.config/rofi/scripts/wbswitcher.sh
         ;;
     " Screenshot")
         bash ~/.config/hypr/scripts/screenshot.sh

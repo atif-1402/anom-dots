@@ -1,0 +1,108 @@
+@import 'colors.css';
+
+/* ===== Compatibility aliases for custom style.css ===== */
+
+@define-color bg0 @background;
+@define-color bg1 @surface_container;
+@define-color bg3 @surface_variant;
+@define-color bg4 @surface_container_high;
+
+@define-color fg @primary ;
+@define-color red @error;
+
+* {
+    border: none;
+    border-radius: 0px;
+
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: bold;
+
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+window#waybar {
+    background: transparent;
+    min-height: 32px;
+}
+
+tooltip {
+    background: alpha(@bg0, 0.8);
+    border: 1px solid @bg3;
+    border-radius: 12px;
+}
+
+tooltip label{
+    color: @fg;
+    padding: 6px;
+}
+
+#workspaces {
+    margin-bottom: 2px;
+    background-color: alpha(@bg0, 0.6);
+    padding: 2px 4px;
+    margin: 0 0 0 12px;
+    border-radius: 8px;
+    border: 1px solid alpha(@bg1, 0.6);
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: @secondary_fixed;
+    opacity: 0.6;
+    transition:
+        color 90ms cubic-bezier(.22,1,.36,1),
+        padding 110ms cubic-bezier(.34,1.56,.64,1),
+        font-size 100ms ease,
+        opacity 90ms ease;
+}
+
+#workspaces button:not(.active) {
+    padding: 0 0;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+/* active */
+#workspaces button.active {
+    color: @fg;
+    opacity: 1;
+    padding: 0 0px;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+/* hover */
+#workspaces button:hover {
+    color: @on_primary_fixed_variant;
+    opacity: 0.85;
+}
+
+/* urgent */
+#workspaces button.urgent {
+    color: @red;
+}
+
+#group-left,
+#group_left,
+#left,
+#mpris,
+#tray,
+#group-right,
+#group_right,
+#right,
+#custom-notification    {
+    color: @fg;
+    background-color: alpha(@bg0, 0.6);
+    padding: 0 10px 0 10px;
+    margin: 0 0 0 10px;
+    border-radius: 8px;
+    border: 1px solid @bg1;
+}
+
+#group-right,
+#group_right,
+#right {
+    margin-right: 8px;;
+}

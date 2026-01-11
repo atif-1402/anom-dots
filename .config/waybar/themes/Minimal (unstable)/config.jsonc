@@ -1,0 +1,170 @@
+{
+    "font-family":"JetBrainsMono Nerd Font Propo", 
+    "position": "top",
+    "margin-top": 2,
+    "modules-left": ["group/left", "mpris"],
+    "modules-center": [ "hyprland/workspaces", "custom/notification"],
+    "modules-right":[
+        "tray",
+        "group/right"
+    ],
+
+
+    //MODULES//
+
+	"custom/apps": { 
+	  "format": "",
+		"font-family": "JetBrainsMono Nerd Font Propo",
+		"font-weight": 400,
+		"on-click": "~/.config/rofi/scripts/menu.sh"
+        // "on-click": "rofi -show drun"
+	}, 
+
+    "clock": {
+        "format": " {:%I:%M %p}", // AM PM format
+        //"format": "  {:%H:%M}",// 24H
+        "format-alt": "{:%A  %e %B}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+          "default": "",
+          "active": "",
+          "urgent": "",
+          "empty": "",
+        },
+        "persistent-workspaces": {
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+          "5": []
+        },
+
+    "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+        "blueman": "bluetooth",
+        "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+     }
+    },
+
+    "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "on-click": "pulsemixer",
+    "on-click-right": "pulsemixer",
+    "tooltip-format": "Playing at {volume}%",
+    "scroll-step": 5,
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        " ",
+        " "
+       ]
+     }
+    },
+
+    "network": {
+     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+     "format": "{icon}",
+     "format-wifi": "{icon}",
+     "format-ethernet": "󰌘 ethernet",
+     "format-disconnected": "󰤮",
+     "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+     "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+     "tooltip-format-disconnected": "Disconnected",
+     "interval": 3,
+     "spacing": 1,
+    },
+
+   "custom/notification": {
+      "tooltip": true,
+      "format": "<span size='16pt'>{icon}</span>",
+      "format-icons": {
+        "notification": "󱅫",
+        "none": "󰂜",
+        "dnd-notification": "󰂠",
+        "dnd-none": "󰪓",
+        "inhibited-notification": "󰂛",
+        "inhibited-none": "󰪑",
+        "dnd-inhibited-notification": "󰂛",
+        "dnd-inhibited-none": "󰪑"
+      },
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
+
+    "mpris": {
+	    "interval": 10,
+	    "format": "{player_icon} {dynamic}",
+	    "format-paused": "{status_icon} {artist}",
+	    "on-click-middle": "playerctl play-pause",
+	    "on-click": "playerctl previous",
+	    "on-click-right": "playerctl next",
+	    "scroll-step": 5.0,
+	    "on-scroll-up": "$HOME/.config/hypr/scripts/volume.sh --inc",
+	    "on-scroll-down": "$HOME/.config/hypr/scripts/volume.sh --dec",
+	    "smooth-scrolling-threshold": 1,
+	    "tooltip": true,
+	    "tooltip-format": "{status_icon} {title}\nLeft Click: previous\nMid Click: Pause\nRight Click: Next",
+	    "player-icons": {
+	    	"chromium": "",
+	    	"default": "",
+	    	"firefox": "",
+	    	"kdeconnect": "",
+	    	"mopidy": "",
+	    	"mpv": "󰐹",
+	    	"spotify": "󰎆",
+	    	"vlc": "󰕼",
+	    },
+	    "status-icons": {
+	    	"paused": "",
+	    	"playing": "",
+	    	"stopped": "",
+	    },
+	    "dynamic-order": ["artist"],
+	    "ignored-players": [ "zen"],
+	    "max-length": 25,
+    },
+
+	"custom/screenrecording-indicator": {
+		"format": "",
+        "on-click": "kitty --title=Recorder sh -c '~/.config/hypr/scripts/screenrec.sh'",
+        "signal": 8,
+		"tooltip": false,
+        "return-type": "json"
+      },
+    },
+
+    "group/left": {
+	    "orientation": "inherit",
+	    "modules": [ 
+        "custom/apps",
+        "custom/seprator#line",
+        "clock",
+	    ]
+    },    
+
+    "group/right": {
+	    "orientation": "inherit",
+	    "modules": [ 
+        "pulseaudio",
+        "custom/seprator#line",
+        "network",
+	    ]
+    },  
+ 
+    "custom/seprator#line": {
+        "format": " |" 
+    }
+  
+}
