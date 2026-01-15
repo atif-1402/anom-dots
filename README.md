@@ -58,7 +58,7 @@ My personal Linux **dotfiles**, focused on a clean, minimal, and functional **Wa
 | **JetBrainsMono Nerd Font** | Terminal & UI font |
 
 ---
-## 📂 Directory Structure
+## 📂 Directory Structure - Mains
 
 ```bash
 .config/
@@ -66,7 +66,6 @@ My personal Linux **dotfiles**, focused on a clean, minimal, and functional **Wa
 ├── waybar/        # Waybar themes & scripts
 ├── swaync/        # Notification styling
 ├── rofi/          # Rofi configs
-├── swayosd/       # OSD styling
 └── scripts/       # Custom scripts
 
 .local/
