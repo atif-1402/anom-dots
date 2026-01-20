@@ -14,9 +14,11 @@
 
 My personal Linux **dotfiles**, focused on a clean, minimal, and functional **Wayland rice** built around **Hyprland**.
 
-> ⚠️ These dotfiles are tailored for my workflow. Use them as inspiration and adapt as needed.
+> ⚠️ <b>No More Updated Sorry But its fine 😅</b> 
 
-> ⚠️ Make every script executable (by chmod +x filename.sh) or some utils not gonna work.
+> ⚠️ <b>These dotfiles are tailored for my workflow. Use them as inspiration and adapt as needed.</b>
+
+> ⚠️ <b>Make every script executable (by chmod +x filename.sh) or some utils not gonna work.</b>
 
 ---
 
